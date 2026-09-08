@@ -202,13 +202,5 @@ void Player::Release()
 
 void Player::OnCollision(GameObject* pTarget)
 {
-	if (pTarget->GetObjectName() == "Enemy")
-	{
-		TestScene* testScene =
-			dynamic_cast<TestScene*>(GetParent()->GetParent());;
-
-		Ground* ground =
-			dynamic_cast<Ground*>(FindObject("Ground"));
-		KillMe();
-	}
+	
 }

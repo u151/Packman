@@ -98,7 +98,6 @@
       <Filter>01Engine\GameObject</Filter>
     </ClCompile>
     <ClCompile Include="Ground.cpp" />
-    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Esa.cpp" />
     <ClCompile Include="Title.cpp" />
   </ItemGroup>
@@ -178,7 +177,6 @@
       <Filter>01Engine\GameObject</Filter>
     </ClInclude>
     <ClInclude Include="Ground.h" />
-    <ClInclude Include="Enemy.h" />
     <ClInclude Include="Esa.h" />
     <ClInclude Include="Title.h" />
   </ItemGroup>

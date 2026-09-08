@@ -1,6 +1,5 @@
 #include "TestScene.h"
 #include "Player.h"
-#include "Enemy.h"
 #include "Ground.h"
 #include "Engine/Camera.h"
 #include "Engine/Text.h"
@@ -24,11 +23,10 @@ TestScene::TestScene(GameObject* parent)
 void TestScene::Initialize()
 {
 	//pWp = Instantiate<Weapon>(this);
-	Player* pPlayer = Instantiate <Player>(this);
-	Ground* pGround = Instantiate<Ground>(this);
-	Enemy* pEnemy = Instantiate<Enemy>(this);
-	pPlayer->SetGround(pGround);
-	pEnemy->SetGround(pGround);
+	pPlayer_ = Instantiate<Player>(this);
+	pGround_ = Instantiate<Ground>(this);
+	
+	pPlayer_->SetGround(pGround_);
 	Camera::SetPosition({ 0,20,-20 });
 	Camera::SetTarget({ 0,0,0 });
 
@@ -43,7 +41,8 @@ void TestScene::Update()
 	{
 		SceneManager* sceneManager =
 			dynamic_cast<SceneManager*>(GetParent());
-			sceneManager->ChangeScene(SCENE_ID_TITLE);
+
+		sceneManager->ChangeScene(SCENE_ID_TITLE);
 	}
 }
 
