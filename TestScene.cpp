@@ -8,6 +8,7 @@
 
 namespace {
 	int myScore = 0;
+	int timer = 0;
 }
 
 //コンストラクタ
@@ -44,6 +45,16 @@ void TestScene::Update()
 
 		sceneManager->ChangeScene(SCENE_ID_TITLE);
 	}
+	if (myScore >= 200)
+	{
+		timer++;
+	}
+	if (timer == 100)
+	{
+		SceneManager* sceneManager =
+		dynamic_cast<SceneManager*>(GetParent());
+		sceneManager->ChangeScene(SCENE_ID_TITLE);
+	}
 }
 
 //描画
@@ -52,6 +63,12 @@ void TestScene::Draw()
 	std::string scrText;
 	scrText = "SCORE:" + std::to_string(myScore);
 	pText_->Draw(20, 20, scrText.c_str());
+	if (myScore >= 200)
+	{
+		std::string scrText;
+		scrText = "clear";
+		pText_->Draw(200,20, scrText.c_str());
+	}
 }
 
 //開放
